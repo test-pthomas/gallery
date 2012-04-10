@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{% block title %}{% endblock title %} | Gallery Test App</title>
+    
+    <link rel="stylesheet" href="{{MEDIA_URL}}style/main.css" type="text/css" />
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{{MEDIA_URL}}script/base.js"></script>
+    {% block extra_head %}{% endblock extra_head %}
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <div id="banner">Gallery Test App</div>
+        <ul id="menu" style="">
+          <li>
+            <a href="{% url home %}">Home</a>
+          </li>
+          <li>
+          	<a href="{% url gallery_list %}">Galleries</a>
+          </li>
+          {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+              <li>
+                <a href="{% url admin:index %}">Admin</a>
+              </li>
+            {% endif %}
+            <li>
+              <a href="{% url logout %}">Logout</a>
+            </li>
+            <li>
+            	<a href="{% url my_galeries %}">My Galeries</a>
+            </li>
+            <li>
+            	<a href="{% url create_galery %}">Create Gallery</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="{% url login %}">Login</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      <div id="content">
+        {% block content %}{% endblock content %}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+body {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+/* Layout */
+#wrapper {
+  margin: 0 auto;
+  width: 500px;
+}
+
+#content {
+  background: -moz-linear-gradient(center bottom, #CCC 0, #EEE 50%) repeat scroll 0 0 #EEE;
+  background: -webkit-gradient(linear, center bottom, center top, from(#CCC), to(#EEE)) repeat scroll 0 0 #EEE;
+  box-shadow: 0 1px 2px #838383;
+  border-radius: 5px;
+  color: #222;
+  display: none;
+  margin: 0 0 10px;
+  padding: 10px 15px;
+  width: 470px;
+  -webkit-box-shadow: 0 1px 2px #838383;
+}
+
+#header {
+  height: 65px;
+  position: relative;
+  width: 500px;
+}
+
+#banner {
+  background: url('img/magic8ball.jpg') no-repeat;
+  display: inline-block;
+  font-size: 30px;
+  height: 65px;
+  line-height: 30px;
+  padding: 0 0 0 65px;
+  text-shadow: #838383 1px 1px 1px;
+  text-transform: uppercase;
+  width: 240px;
+}
+
+/* Menu */
+#menu {
+  bottom: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 2px 0 0;
+  position: absolute;
+  right: 0;
+}
+#menu li {
+  background: -moz-linear-gradient(center top, #CCC 0, #DDD 95%) repeat scroll 0 0 #DDD;
+  background: -webkit-gradient(linear, center top, center bottom, from(#CCC), to(#DDD)) repeat scroll 0 0 #DDD;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+#menu li.current {
+  background: -moz-linear-gradient(center bottom, #EEE 0, #DFDFDF 95%) repeat scroll 0 0 #EEE;
+  background: -webkit-gradient(linear, center bottom, center top, from(#EEE), to(#DFDFDF)) repeat scroll 0 0 #EEE;
+  box-shadow: 0 1px 2px #838383;
+  -webkit-box-shadow: 0 1px 2px #838383;
+}
+#menu li a {
+  display: block;
+  padding: 4px 8px;
+}
+#menu li.current a, #menu li:hover a {
+  color: #003090;
+}
+
+/* Styling */
+input[type='button'], input[type='submit'] {
+  background: -moz-linear-gradient(center bottom, #1A4AAA, #8AAAEA) repeat scroll 0 0 #8AAAEA;
+  background: -webkit-gradient(linear, center bottom, center top, from(#1A4AAA), to(#8AAAEA)) repeat scroll 0 0 #8AAAEA;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #838383;
+  border: 0;
+  color: #FFF;
+  cursor: pointer;
+  padding: 3px 7px;
+  -webkit-box-shadow: 0 1px 2px #838383;
+}
+input[type='button']:hover, input[type='submit']:hover {
+  background: -moz-linear-gradient(center bottom, #003090, #7090D0) repeat scroll 0 0 #7090D0;
+  background: -webkit-gradient(linear, center bottom, center top, from(#003090), to(#7090D0)) repeat scroll 0 0 #8AAAEA;
+  color: #AACAFF;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+a {
+  color: #2260DD;
+  text-decoration: none;
+}
