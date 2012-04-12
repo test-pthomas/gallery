@@ -18,9 +18,6 @@
           <li>
             <a href="{% url home %}">Home</a>
           </li>
-          <li>
-          	<a href="{% url gallery_list %}">Galleries</a>
-          </li>
           {% if user.is_authenticated %}
             {% if user.is_superuser %}
               <li>
