@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}My Galleries{% endblock %}
+{% block extra_head %}
+<script type="text/javascript" src="{{STATIC_URL}}galleria/galleria-1.2.7.min.js"></script>
+<link type="text/css" rel="stylesheet" href="{{STATIC_URL}}galleria/themes/classic/galleria.classic.css"/>
+<script type="text/javascript" src="{{STATIC_URL}}galleria/themes/classic/galleria.classic.min.js"></script>
+{% endblock %}
+
+{% block content %}
+	<h1>My Galleries</h1>
+	{% for gallery in galleries %}
+		<h2>{{ gallery.name }}</h2>
+		<br/>
+		By: <b>{{ gallery.user }}</b>
+		<br/>
+		<div id="gallery" style="height:300px;width:470px;">
+			{% for image in gallery.images.all %}
+				<img src="{{image.image.url}}">
+			{% endfor %}
+		</div>
+		Taken: <b>{{ gallery.date_taken }}</b><a class="add_image" href="{% url add_image %}">Add Image</a>
+		<br/><br/>
+		<script>
+			Galleria.configure({
+			    imageCrop: false,
+			    transition: 'slide',
+			    transitionSpeed: 800 
+			});
+			Galleria.loadTheme('{{STATIC_URL}}galleria/themes/classic/galleria.classic.min.js');
+			Galleria.run('#gallery');
+		</script>
+			
+		</script>
+	{% endfor %}
+{% endblock %}

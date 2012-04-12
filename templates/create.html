@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Create a Gallery{% endblock %}
+
+{% block extra_head %}
+<script type="text/javascript" src="{{STATIC_URL}}script/jquery-ui-1.8.18.custom.min.js"></script>
+<script>
+	$(function() {
+		$( "#id_date_taken" ).datepicker();
+	});
+</script>
+{% endblock %}
+
+{% block content %}
+	<h1>Create a Gallery</h1>
+	<form method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Submit"/>
+	</form>
+{% endblock %}
